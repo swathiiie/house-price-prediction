@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HOUSE PRICE PREDICTOR</title>
+</head>
+    <meta charset="UTF-8">
+    <title>House Price Predictor</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #e0f7fa;
+            --accent-color: #00bcd4;
+            --hover-color: #0097a7;
+       
+        }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(to right, var(--bg-color), #e0f7fa);
+        color: var(--text-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        background: var(--container-bg);
+        padding: 30px 40px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        width: 400px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        padding: 12px;
+        background-color: var(--accent-color);
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+        background-color: var(--hover-color);
+    }
+
+    .prediction {
+        margin-top: 20px;
+        font-size: 18px;
+        color: var(--text-color);
+        font-weight: 600;
+        text-align: center;
+    }
+
+        
+    </style>
+</head>
+
+<body>
+    <h2>Boston Housing Price Prediction</h2>
+    <form action="/predict" method="post">
+        <label>CRIM:</label><br>
+        <input type="text" name="CRIM"><br>
+        
+        <label>ZN:</label><br>
+        <input type="text" name="ZN"><br>
+        
+        <label>INDUS:</label><br>
+        <input type="text" name="INDUS"><br>
+        
+        <label>CHAS:</label><br>
+        <input type="text" name="CHAS"><br>
+        
+        <label>NOX:</label><br>
+        <input type="text" name="NOX"><br>
+        
+        <label>RM:</label><br>
+        <input type="text" name="RM"><br>
+        
+        <label>AGE:</label><br>
+        <input type="text" name="AGE"><br>
+        
+        <label>DIS:</label><br>
+        <input type="text" name="DIS"><br>
+        
+        <label>RAD:</label><br>
+        <input type="text" name="RAD"><br>
+        
+        <label>TAX:</label><br>
+        <input type="text" name="TAX"><br>
+        
+        <label>PTRATIO:</label><br>
+        <input type="text" name="PTRATIO"><br>
+        
+        <label>B:</label><br>
+        <input type="text" name="B"><br>
+        
+        <label>LSTAT:</label><br>
+        <input type="text" name="LSTAT"><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+    {% if prediction %}
+        <div class="prediction">
+            💰 Estimated Price: ${{ prediction }}
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
